@@ -3,9 +3,7 @@ var express = require('express');
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
-const dev_db_url = "process.env.MONGODB_URI";
-console.log(process.env.MONGODB_URI);
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI;
 main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
